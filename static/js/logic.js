@@ -37,19 +37,19 @@ var satellitemap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}
 function createMap(earthquakes) {
 // Create the faultline layer
 //WHEN I ADD THIS***********
-var faultLine = new L.LayerGroup();
+//var faultLine = new L.LayerGroup();
 
 //WHEN I ADD THIS STUFF TOO*******
-var faultlinequery = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_plates.json";
+//var faultlinequery = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_plates.json";
 
 // // Create the faultlines and add them to the faultline layer
-d3.json(faultlinequery, function (data) {
-  L.geoJSON(data, {
-    style: function () {
-      return { color: "orange", fillOpacity: 0 }
-    }
-  }).addTo(faultLine)
-})
+// d3.json(faultlinequery, function (data) {
+//   L.geoJSON(data, {
+//     style: function () {
+//       return { color: "orange", fillOpacity: 0 }
+//     }
+//   }).addTo(faultLine)
+// })
   // Create our map, giving it the streetmap and earthquakes layers to display on load
   var myMap = L.map("map", {
     center: [
@@ -57,7 +57,7 @@ d3.json(faultlinequery, function (data) {
     ],
     zoom: 4,
     //WHEN I ADD FAULTLINE******
-    layers: [satellitemap, earthquakes, faultLine,
+    layers: [satellitemap, earthquakes, //faultLine,
     ]
   });
 
